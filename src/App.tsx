@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+اimport { useEffect, useRef, useState } from 'react'
 import CircleWheel from './components/CircleWheel'
 import PersonSpot from './components/PersonSpot'
 import { isSupabaseConfigured, supabase } from './supabase'
@@ -243,7 +243,7 @@ const assignments = state.cleaning_assignments
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Reinigung</div>
             </div>
 
-            <div className="relative aspect-square w-[min(96vw,30rem)]">
+            <div className="relative aspect-square w-[min(88vw,25rem)]">
               {people.map((person, index) => (
                 <PersonSpot
                   key={person.id}
