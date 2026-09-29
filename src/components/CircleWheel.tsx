@@ -31,7 +31,7 @@ const LABEL_SIZE = 'min-h-12 w-max max-w-32'
 //
 // هذه القيمة واحدة لجميع الاتجاهات، لذلك عندما تدور
 // العجلة تبقى المسافة نفسها.
-const LABEL_DISTANCE = 1
+const LABEL_DISTANCE = 2
 
 // سماكة إطار العجلة
 const WHEEL_BORDER = 'border-[10px]'
