@@ -69,31 +69,37 @@ export default function App() {
 
     let active = true
 
-    const load = async () => {
-      setLoading(true)
-      setActionError('')
+  const load = async () => {
+  setLoading(true)
+  setActionError('')
 
-      const [peopleResult, stateResult] = await Promise.all([
-        supabase.from('people').select('id, name').order('id'),
-        supabase.from('household_state').select('*').eq('id', 1).single()
-      ])
+  const peopleResult = await supabase
+    .from('people')
+    .select('id, name')
+    .order('id')
 
-      if (!active) return
+  const stateResult = await (supabase as any)
+    .from('household_state')
+    .select('*')
+    .eq('id', 1)
+    .single()
 
-      if (peopleResult.error) {
-        setActionError(peopleResult.error.message)
-      } else if (peopleResult.data?.length === 4) {
-        setPeople(peopleResult.data)
-      }
+  if (!active) return
 
-      if (stateResult.error) {
-        setActionError(stateResult.error.message)
-      } else if (stateResult.data) {
-        setState(stateResult.data)
-      }
+  if (peopleResult.error) {
+    setActionError(peopleResult.error.message)
+  } else if (peopleResult.data && peopleResult.data.length === 4) {
+    setPeople(peopleResult.data)
+  }
 
-      setLoading(false)
-    }
+  if (stateResult.error) {
+    setActionError(stateResult.error.message)
+  } else if (stateResult.data) {
+    setState(stateResult.data as HouseholdState)
+  }
+
+  setLoading(false)
+}
 
     void load()
 
@@ -142,11 +148,13 @@ export default function App() {
 
     setActionError('')
     setPendingPersonId(personId)
-
-    const { data, error } = await supabase.rpc('complete_cleaning', {
-      p_person_id: personId,
-      p_expected_round: state.cleaning_round
-    })
+const { data, error } = await supabase.rpc(
+  'complete_cleaning' as never,
+  {
+    p_person_id: personId,
+    p_expected_round: state.cleaning_round
+  } as never
+)
 
     setPendingPersonId(null)
 
@@ -166,9 +174,12 @@ export default function App() {
     setActionError('')
     setDishwasherPending(true)
 
-    const { data, error } = await supabase.rpc('complete_dishwasher', {
-      p_expected_position: state.dishwasher_position
-    })
+  const { data, error } = await supabase.rpc(
+  'complete_dishwasher' as never,
+  {
+    p_expected_position: state.dishwasher_position
+  } as never
+)
 
     setDishwasherPending(false)
 
