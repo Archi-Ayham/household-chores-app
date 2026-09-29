@@ -243,7 +243,7 @@ const assignments = state.cleaning_assignments
               <div className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Reinigung</div>
             </div>
 
-           <div className="relative aspect-square w-[min(94vw,29rem)]">
+           <div className="relative aspect-square w-[min(93vw,29rem)]">
               {people.map((person, index) => (
                 <PersonSpot
                   key={person.id}
