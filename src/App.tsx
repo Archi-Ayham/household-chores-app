@@ -1,4 +1,4 @@
-اimport { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import CircleWheel from './components/CircleWheel'
 import PersonSpot from './components/PersonSpot'
 import { isSupabaseConfigured, supabase } from './supabase'
