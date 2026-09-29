@@ -17,7 +17,7 @@ type CircleWheelProps = {
    ========================================================= */
 
 // حجم العجلة
-const WHEEL_SIZE = 'clamp(12.5rem, 52vw, 15rem)'
+const WHEEL_SIZE = 'clamp(10rem, 42vw, 12rem)'
 
 // حجم القرص الداخلي
 const CENTER_SIZE = 'size-10'
