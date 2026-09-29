@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Household Chores',
-        short_name: 'Chores',
+        name: 'Mian WG',
+        short_name: 'Mian WG',
         description: 'A simple shared household chores wheel.',
         theme_color: '#0f172a',
         background_color: '#f8fafc',
