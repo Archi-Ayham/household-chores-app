@@ -200,7 +200,13 @@ const assignments = state.cleaning_assignments
   const currentDishwasherPerson = people.find((person) => person.id === state.dishwasher_position) ?? people[0]
 
   return (
-    <div className="safe-top safe-bottom min-h-[100svh] bg-slate-50 px-4 text-slate-900">
+   <div
+  className="safe-top safe-bottom min-h-[100svh] bg-cover bg-center bg-no-repeat px-4 text-slate-900"
+  style={{
+    backgroundImage:
+      "linear-gradient(rgba(255,255,255,0.72), rgba(255,255,255,0.72)), url('/background.jpg')"
+  }}
+>
       <main className="mx-auto flex min-h-[100svh] w-full max-w-lg flex-col">
         <header className="pt-2">
           <div className="rounded-2xl bg-white p-1.5 shadow-sm ring-1 ring-slate-200">
